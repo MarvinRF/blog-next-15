@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Loader } from 'lucide-react';
 
 type spinLoaderProps = {
   className?: string;
@@ -8,17 +9,7 @@ type spinLoaderProps = {
 export const SpinLoader = ({ className = '' }: spinLoaderProps) => {
   return (
     <div className={clsx('flex', 'items-center', 'justify-center', className)}>
-      <div
-        className={clsx(
-          'w-10',
-          'h-10',
-          'border-5',
-          'border-t-transparent',
-          'border-slate-900',
-          'rounded-full',
-          'animate-spin',
-        )}
-      ></div>
+      <Loader className={clsx('w-10', 'h-10', 'animate-spin')} />
     </div>
   );
 };
