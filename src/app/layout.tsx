@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { ThemeProvider } from '@/components/providers/theme-provider';
+
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Marvin Tech Blog",
-  description: "Go Beyond ",
+  title: 'Marvin Tech Blog',
+  description: 'Go Beyond ',
 };
 
 type RootLayoutProps = Readonly<{
@@ -12,8 +14,17 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
+    <html lang='pt-BR' suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
