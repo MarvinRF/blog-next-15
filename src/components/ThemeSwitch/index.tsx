@@ -36,12 +36,12 @@ export function ThemeToggle() {
       <span
         className={`${
           theme === 'dark' ? 'translate-x-6 ' : 'translate-x-0 '
-        } absolute left-0 inline-flex items-center justify-center w-6 h-6 rounded-full dark:bg-white bg-slate-800 shadow-sm transform transition-all duration-500 ease-in-out`}
+        } absolute left-0 inline-flex items-center justify-center w-6 h-6 rounded-full dark:bg-white bg-slate-800 shadow-sm transition duration-700 ease-in-out`}
       >
         {theme === 'dark' ? (
-          <SunIcon className='w-3 h-3 text-slate-800 transition-colors duration-500' />
+          <SunIcon className='w-3 h-3 text-slate-800 transition-colors duration-700' />
         ) : (
-          <MoonIcon className='w-3 h-3 text-white transition-colors duration-500' />
+          <MoonIcon className='w-3 h-3 text-white transition-colors duration-700' />
         )}
       </span>
     </button>
