@@ -39,7 +39,7 @@ export function ThemeToggle() {
         } absolute left-0 inline-flex items-center justify-center w-6 h-6 rounded-full dark:bg-white bg-slate-800 shadow-sm transform transition-all duration-500 ease-in-out`}
       >
         {theme === 'dark' ? (
-          <SunIcon className='w-3 h-3 text-amber-400 transition-colors duration-500' />
+          <SunIcon className='w-3 h-3 text-slate-800 transition-colors duration-500' />
         ) : (
           <MoonIcon className='w-3 h-3 text-white transition-colors duration-500' />
         )}
