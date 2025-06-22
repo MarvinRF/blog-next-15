@@ -1,14 +1,27 @@
-'use client';
 import clsx from 'clsx';
-export const Header = () => {
+import { Navbar } from '../NavBar';
+import { DropDownMenu } from '../DropDownMenu';
+export function Header() {
   return (
-    <>
-      <h1 className={clsx({ 'text-4xl': true }, 'font-bold', 'mb-4')}>
-        Welcome to Marvin Tech Blog
+    <header className=' flex items-center justify-between'>
+      <h1
+        className={clsx(
+          'text-3xl/normal font-extrabold text-center py-8',
+          'sm:text-3xl/normal sm:py-10',
+          'md:text-4xl/normal md:py-11',
+          'lg:text-7xl/normal md:py-12',
+        )}
+      >
+        <a href='#'>Tech Heaven</a>
       </h1>
-      <p className='text-lg mb-8'>
-        Discover the latest in technology and innovation.
-      </p>
-    </>
+      {/* Navbar visível em md ou maior */}
+      <div className='hidden md:block'>
+        <Navbar />
+      </div>
+      {/* DropDownMenu visível apenas em sm e menor */}
+      <div className='block md:hidden'>
+        <DropDownMenu />
+      </div>
+    </header>
   );
-};
+}
