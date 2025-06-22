@@ -9,9 +9,9 @@ export const Container = ({ children }: ContainerProps) => {
   return (
     <div
       className={clsx(
-        'bg-slate-100',
-        'text-slate-900',
-        'dark:bg-gray-900 dark:text-white',
+        'bg-zinc-100',
+        'text-zinc-900',
+        'dark:bg-zinc-900 dark:text-white',
         'min-h-screen px-5',
         'flex items-center justify-center',
         'mx-auto',
