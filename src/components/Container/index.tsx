@@ -13,7 +13,7 @@ export const Container = ({ children }: ContainerProps) => {
         'text-slate-900',
         'dark:bg-gray-900 dark:text-white',
         'min-h-screen px-5',
-        'mx-auto',
+        'mx-auto flex justify-center',
       )}
     >
       <div className='max-w-screen-lg px-8'>{children}</div>
