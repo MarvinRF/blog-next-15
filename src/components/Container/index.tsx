@@ -13,10 +13,11 @@ export const Container = ({ children }: ContainerProps) => {
         'text-slate-900',
         'dark:bg-gray-900 dark:text-white',
         'min-h-screen px-5',
-        'mx-auto flex justify-center',
+        'flex items-center justify-center',
+        'mx-auto',
       )}
     >
-      <div className='max-w-screen-lg px-8'>{children}</div>
+      <div className='max-w-[1440px] px-8 w-full'>{children}</div>
     </div>
   );
 };
