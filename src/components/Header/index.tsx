@@ -9,8 +9,8 @@ export function Header() {
         className={clsx(
           'text-3xl/normal font-extrabold text-center py-8',
           'sm:text-3xl/normal sm:py-10',
-          'md:text-4xl/normal md:py-11',
-          'lg:text-7xl/normal md:py-12',
+          'md:text-4xl/normal md:py-10',
+          'lg:text-7xl/normal md:py-10',
         )}
       >
         <Link href='/'>Tech Heaven</Link>

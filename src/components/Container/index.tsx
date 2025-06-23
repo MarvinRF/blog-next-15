@@ -13,7 +13,7 @@ export const Container = ({ children }: ContainerProps) => {
         'text-zinc-900',
         'dark:bg-zinc-900 dark:text-white',
         'min-h-screen px-5',
-        'flex items-center justify-center',
+        'flex justify-center',
         'mx-auto',
       )}
     >
