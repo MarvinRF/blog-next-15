@@ -19,10 +19,10 @@ export default async function HomePage() {
           'group',
         )}
       >
-        <PostCoverImage />
+        <PostCoverImage href='#' src='/images/bryen_1.png' />
         <div className='flex flex-col sm:justify-center'>
           <time className='text-zinc-600 text-sm/tight' dateTime='2025-04-20'>
-            20/04/2025 10:00
+            23/06/2025 10:00
           </time>
           <PostHeading as='h1' url={'/'}>
             Very big Title of a Post
