@@ -1,11 +1,10 @@
 import { Container } from '@/components/Container';
 import { Header } from '@/components/Header';
+import { PostCoverImage } from '@/components/PostCoverImage';
 import { PostHeading } from '@/components/PostHeading';
 import { PostList } from '@/components/PostsList';
 import { SpinLoader } from '@/components/SpinLoader';
 import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Suspense } from 'react';
 
 export default async function HomePage() {
@@ -20,16 +19,7 @@ export default async function HomePage() {
           'group',
         )}
       >
-        <Link href='#' className='w-full h-full overflow-hidden rounded-xl'>
-          <Image
-            className='w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 ease-in-out'
-            src='/images/bryen_0.png'
-            width={1200}
-            height={720}
-            alt='Title'
-            priority
-          />
-        </Link>
+        <PostCoverImage />
         <div className='flex flex-col sm:justify-center'>
           <time className='text-zinc-600 text-sm/tight' dateTime='2025-04-20'>
             20/04/2025 10:00
