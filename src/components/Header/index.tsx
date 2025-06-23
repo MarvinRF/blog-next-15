@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { Navbar } from '../NavBar';
 import { DropDownMenu } from '../DropDownMenu';
+import Link from 'next/link';
 export function Header() {
   return (
     <header className=' flex items-center justify-between'>
@@ -12,7 +13,7 @@ export function Header() {
           'lg:text-7xl/normal md:py-12',
         )}
       >
-        <a href='#'>Tech Heaven</a>
+        <Link href='/'>Tech Heaven</Link>
       </h1>
       {/* Navbar visível em md ou maior */}
       <div className='hidden md:block'>

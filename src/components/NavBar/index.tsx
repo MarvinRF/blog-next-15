@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeToggle } from '../ThemeSwitch';
 import { Search } from 'lucide-react';
+import Link from 'next/link';
 
 export const Navbar = () => {
   return (
@@ -16,13 +17,13 @@ export const Navbar = () => {
             />
           </li>
           <li>
-            <a href='#'>Home</a>
+            <Link href='/home'>Home</Link>
           </li>
           <li>
-            <a href='#'>Category</a>
+            <Link href='/caregory'>Category</Link>
           </li>
           <li>
-            <a href='#'>About Me</a>
+            <Link href='/about'>About Me</Link>
           </li>
           <li className='flex items-center'>
             <ThemeToggle />
