@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container';
 import { Header } from '@/components/Header';
+import { PostHeading } from '@/components/PostHeading';
 import { PostList } from '@/components/PostsList';
 import { SpinLoader } from '@/components/SpinLoader';
 import clsx from 'clsx';
@@ -33,14 +34,9 @@ export default async function HomePage() {
           <time className='text-zinc-600 text-sm/tight' dateTime='2025-04-20'>
             20/04/2025 10:00
           </time>
-          <h1
-            className={clsx(
-              'text-2xl/tight font-extrabold mb-4',
-              'sm:text-4xl/tight',
-            )}
-          >
-            <Link href='#'>Very big Title of a Post</Link>
-          </h1>
+          <PostHeading as='h1' url={'/'}>
+            Very big Title of a Post
+          </PostHeading>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             aspernatur quisquam eligendi necessitatibus est corrupti dolores quo
