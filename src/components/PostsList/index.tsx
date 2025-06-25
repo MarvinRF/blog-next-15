@@ -15,14 +15,21 @@ export async function PostList() {
       )}
     >
       {posts.map(post => (
-        <div key={post.id} className={clsx('flex flex-col group gap-4')}>
+        <div
+          key={post.id}
+          className={clsx(
+            'flex flex-col gap-4 group',
+            'border border-zinc-200 dark:border-zinc-700',
+            'rounded-2xl p-4 bg-white dark:bg-zinc-900',
+            'shadow-sm hover:shadow-md transition-shadow duration-300',
+          )}
+        >
           <PostCoverImage
             href={`/post/${post.slug}`}
             src={post.coverImageUrl}
             alt={post.title}
             title={post.title}
-            width={1200}
-            height={720}
+            mode='responsive'
           />
           <PostContent
             dateTime={post.createdAt}

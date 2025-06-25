@@ -19,7 +19,7 @@ export const PostHeading = ({
   return (
     <Tag className={clsx(headingClassesMap[Tag], 'sm:text-4xl/tight')}>
       <Link
-        className='hover:text-zinc-500 dark:hover:text-zinc-600 transition duration-500 ease-in-out'
+        className='group-hover:text-zinc-500 dark:group-hover:text-zinc-600 transition duration-500 ease-in-out'
         href={url}
       >
         {children}

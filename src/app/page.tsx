@@ -26,6 +26,7 @@ export default async function HomePage() {
           title={'main post'}
           width={1200}
           height={720}
+          mode='fixed'
           priority={true}
         />
         <div className='flex flex-col sm:justify-center'>
