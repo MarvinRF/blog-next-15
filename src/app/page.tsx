@@ -19,7 +19,15 @@ export default async function HomePage() {
           'group',
         )}
       >
-        <PostCoverImage href='#' src='/images/bryen_1.png' />
+        <PostCoverImage
+          href='#'
+          src='/images/bryen_1.png'
+          alt={'main post'}
+          title={'main post'}
+          width={1200}
+          height={720}
+          priority={true}
+        />
         <div className='flex flex-col sm:justify-center'>
           <time className='text-zinc-600 text-sm/tight' dateTime='2025-04-20'>
             23/06/2025 10:00
