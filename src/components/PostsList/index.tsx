@@ -39,11 +39,11 @@ export async function PostList() {
             dateTime={formatDateTime(post.createdAt)}
             formattedDate={formatDateTime(post.createdAt)}
             title={post.title}
+            heading={'h2'}
             url={`/post/${post.slug}`}
             dateTitle={formatRelativeDateTime(post.createdAt)}
-          >
-            {post.excerpt}
-          </PostContent>
+            excerpt={post.excerpt}
+          />
         </div>
       ))}
     </div>

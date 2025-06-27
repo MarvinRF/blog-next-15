@@ -8,8 +8,9 @@ type PostContentProps = {
   title: string;
   dateTitle: string;
   url: string;
-  children: React.ReactNode;
+  excerpt: string;
   className?: string;
+  heading: 'h1' | 'h2';
 };
 
 export const PostContent = ({
@@ -18,7 +19,8 @@ export const PostContent = ({
   title,
   dateTitle,
   url,
-  children,
+  excerpt,
+  heading,
   className,
 }: PostContentProps) => {
   return (
@@ -30,10 +32,10 @@ export const PostContent = ({
       >
         {formattedDate}
       </time>
-      <PostHeading as='h2' url={url}>
+      <PostHeading as={heading} url={url}>
         {title}
       </PostHeading>
-      <p>{children}</p>
+      <p>{excerpt}</p>
     </div>
   );
 };

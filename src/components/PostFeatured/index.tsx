@@ -1,7 +1,7 @@
 import React from 'react';
 import { PostCoverImage } from '../PostCoverImage';
 import clsx from 'clsx';
-import { PostHeading } from '../PostHeading';
+import { PostContent } from '../PostContent';
 
 export const PostFeatured = () => {
   const slug = 'qualquer';
@@ -24,23 +24,21 @@ export const PostFeatured = () => {
         mode='fixed'
         priority={true}
       />
-      <div className='flex flex-col sm:justify-center'>
-        <time className='text-zinc-600 text-sm/tight' dateTime='2025-04-20'>
-          23/06/2025 10:00
-        </time>
-        <PostHeading as='h1' url={postLink}>
-          Very big Title of a Post
-        </PostHeading>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+      <PostContent
+        dateTime={'23/06/2025 10:00'}
+        formattedDate={'23/06/2025 10:00'}
+        title={'Very big Title of a Post'}
+        url={`/post/`}
+        heading={'h1'}
+        dateTitle={'23/06/2025 10:00'}
+        excerpt='Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
           aspernatur quisquam eligendi necessitatibus est corrupti dolores quo
           assumenda, iste modi et sequi quas, facilis perspiciatis. Cumque natus
           at recusandae eligendi! Lorem, ipsum dolor sit amet consectetur
           adipisicing elit. Iste alias animi optio placeat voluptatem provident
           earum ratione amet facere eaque, omnis ut atque, odio, nihil porro
-          ipsum quis tempora! Voluptates.
-        </p>
-      </div>
+          ipsum quis tempora! Voluptates.'
+      />
     </section>
   );
 };
