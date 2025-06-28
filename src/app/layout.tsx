@@ -2,10 +2,16 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 
 import './globals.css';
+import { Container } from '@/components/Container';
+import { Header } from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: 'Marvin Tech Blog',
-  description: 'Go Beyond ',
+  title: {
+    default: 'Marvin Tech Blog',
+    template: '%s - Marvin Tech Blog',
+  },
+  description: 'A blog about tech and programming',
+  keywords: 'tech, programming, blog',
 };
 
 type RootLayoutProps = Readonly<{
@@ -22,7 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Container>
+            <Header />
+            {children}
+            <footer>
+              <p className='text-5xl font-bold text-center py-8'>Footer</p>
+            </footer>
+          </Container>
         </ThemeProvider>
       </body>
     </html>
