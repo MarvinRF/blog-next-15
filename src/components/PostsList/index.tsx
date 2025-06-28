@@ -8,7 +8,7 @@ import {
 } from '@/helpers/format-date-time';
 
 export async function PostList() {
-  const posts = await postRepository.findAll();
+  const posts = await postRepository.findAllPublic();
 
   return (
     <div
@@ -18,7 +18,7 @@ export async function PostList() {
         'lg:grid-cols-3',
       )}
     >
-      {posts.map(post => (
+      {posts.slice(1).map(post => (
         <div
           key={post.id}
           className={clsx(
