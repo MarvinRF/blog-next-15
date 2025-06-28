@@ -2,14 +2,14 @@ import React from 'react';
 import { PostCoverImage } from '../PostCoverImage';
 import clsx from 'clsx';
 import { PostContent } from '../PostContent';
-import { postRepository } from '@/repositories/post';
 import {
   formatDateTime,
   formatRelativeDateTime,
 } from '@/helpers/format-date-time';
+import { findAllPublicPosts } from '@/lib/post/queries';
 
 export const PostFeatured = async () => {
-  const posts = await postRepository.findAllPublic();
+  const posts = await findAllPublicPosts();
   const post = posts[0];
 
   const postLink = `/post/${post.slug}`;

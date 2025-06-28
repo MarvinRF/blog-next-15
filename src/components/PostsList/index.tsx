@@ -1,4 +1,3 @@
-import { postRepository } from '@/repositories/post';
 import { PostCoverImage } from '../PostCoverImage';
 import clsx from 'clsx';
 import { PostContent } from '../PostContent';
@@ -6,9 +5,10 @@ import {
   formatDateTime,
   formatRelativeDateTime,
 } from '@/helpers/format-date-time';
+import { findAllPublicPosts } from '@/lib/post/queries';
 
 export async function PostList() {
-  const posts = await postRepository.findAllPublic();
+  const posts = await findAllPublicPosts();
 
   return (
     <div
