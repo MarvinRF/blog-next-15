@@ -1,9 +1,9 @@
 # 📝 Projeto Blog com Next.js 15, React 19 e Tailwind CSS
 
-Este projeto é um blog moderno construído com **Next.js 15**, **React 19** e
-outras tecnologias de ponta. Ele implementa práticas avançadas como SSR, SSG,
-ISR, Server Actions, autenticação via JWT e deploy completo em servidor Linux
-com HTTPS e NGINX.
+Este projeto é um blog moderno construído com Next.js 15, React 19 e outras
+tecnologias de ponta. Ele implementa práticas avançadas como SSR, SSG, ISR,
+Server Actions, autenticação via JWT e deploy completo em servidor Linux com
+HTTPS e NGINX.
 
 ---
 
