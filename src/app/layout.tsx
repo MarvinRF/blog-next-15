@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider';
 import './globals.css';
 import { Container } from '@/components/Container';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -31,9 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Container>
             <Header />
             {children}
-            <footer>
-              <p className='text-5xl font-bold text-center py-8'>Footer</p>
-            </footer>
+            <Footer />
           </Container>
         </ThemeProvider>
       </body>
