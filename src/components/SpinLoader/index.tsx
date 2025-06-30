@@ -8,7 +8,15 @@ type spinLoaderProps = {
 
 export const SpinLoader = ({ className = '' }: spinLoaderProps) => {
   return (
-    <div className={clsx('flex', 'items-center', 'justify-center', className)}>
+    <div
+      className={clsx(
+        'flex',
+        'items-center',
+        'my-6',
+        'justify-center',
+        className,
+      )}
+    >
       <Loader className={clsx('w-10', 'h-10', 'animate-spin')} />
     </div>
   );
