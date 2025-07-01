@@ -5,10 +5,10 @@ import {
   formatDateTime,
   formatRelativeDateTime,
 } from '@/helpers/format-date-time';
-import { findAllPublicPosts } from '@/lib/post/queries';
+import { findAllPublicPostsCached } from '@/lib/post/queries';
 
 export async function PostList() {
-  const posts = await findAllPublicPosts();
+  const posts = await findAllPublicPostsCached();
 
   return (
     <div
