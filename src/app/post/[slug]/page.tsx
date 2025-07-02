@@ -36,11 +36,15 @@ const PostSlugPage = async ({ params }: PostSlugPageProps) => {
       )}
 
       <header className='mb-6'>
-        <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight'>
+        <h1 className='text-3xl md:text-5xl font-bold mb-2 leading-tight'>
           {post.title}
         </h1>
         <p className='text-sm text-gray-600'>
-          Publicado por <span className='font-medium'>{post.author}</span> em{' '}
+          Publicado por{' '}
+          <span className='font-medium text-black dark:text-white'>
+            {post.author}
+          </span>{' '}
+          em{' '}
           <time dateTime={post.createdAt}>
             {new Date(post.createdAt).toLocaleDateString('pt-BR', {
               day: '2-digit',
