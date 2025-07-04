@@ -1,4 +1,5 @@
 import { findPostBySlugCached } from '@/lib/post/queries';
+import { Metadata } from 'next';
 
 import Image from 'next/image';
 import React from 'react';
@@ -7,9 +8,18 @@ type PostSlugPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const generateMetaData = async ({
+  params,
+}: PostSlugPageProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const post = await findPostBySlugCached(slug);
+  return {
+    title: post.title,
+  };
+};
+
 const PostSlugPage = async ({ params }: PostSlugPageProps) => {
   const { slug } = await params;
-
   const post = await findPostBySlugCached(slug);
 
   return (
