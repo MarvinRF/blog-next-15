@@ -12,7 +12,7 @@ export const SpinLoader = ({ className = '' }: spinLoaderProps) => {
       className={clsx(
         'flex',
         'items-center',
-        'my-6',
+        'my-8',
         'justify-center',
         className,
       )}
