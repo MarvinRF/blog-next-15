@@ -1,5 +1,5 @@
 import { findPostBySlugCached } from '@/lib/post/queries';
-import { notFound } from 'next/navigation';
+
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,17 +9,8 @@ type PostSlugPageProps = {
 
 const PostSlugPage = async ({ params }: PostSlugPageProps) => {
   const { slug } = await params;
-  let post;
 
-  try {
-    post = await findPostBySlugCached(slug);
-  } catch {
-    post = undefined;
-  }
-
-  if (!post) {
-    notFound();
-  }
+  const post = await findPostBySlugCached(slug);
 
   return (
     <article className='max-w-4xl mx-auto px-4 py-12'>
