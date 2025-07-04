@@ -15,6 +15,7 @@ export const generateMetaData = async ({
   const post = await findPostBySlugCached(slug);
   return {
     title: post.title,
+    description: post.excerpt,
   };
 };
 
