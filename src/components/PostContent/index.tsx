@@ -1,12 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
 import { PostHeading } from '../PostHeading';
+import { PostDate } from '../PostDate';
 
 type PostContentProps = {
   dateTime: string;
-  formattedDate: string;
   title: string;
-  dateTitle: string;
   url: string;
   excerpt: string;
   className?: string;
@@ -15,23 +14,19 @@ type PostContentProps = {
 
 export const PostContent = ({
   dateTime,
-  formattedDate,
   title,
-  dateTitle,
   url,
   excerpt,
   heading,
   className,
 }: PostContentProps) => {
+  console.log(dateTime);
   return (
     <div className={clsx('flex flex-col sm:justify-center', className)}>
-      <time
-        className='text-zinc-600 text-sm/tight cursor-default'
-        dateTime={dateTime}
-        title={dateTitle}
-      >
-        {formattedDate}
-      </time>
+      <div>
+        <span className='text-zinc-500 text-sm/tight'>Publicado em: </span>
+        <PostDate dateTime={dateTime} />
+      </div>
       <PostHeading as={heading} url={url}>
         {title}
       </PostHeading>

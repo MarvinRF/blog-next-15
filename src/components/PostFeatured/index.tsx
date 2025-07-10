@@ -2,10 +2,7 @@ import React from 'react';
 import { PostCoverImage } from '../PostCoverImage';
 import clsx from 'clsx';
 import { PostContent } from '../PostContent';
-import {
-  formatDateTime,
-  formatRelativeDateTime,
-} from '@/helpers/format-date-time';
+
 import { findAllPublicPostsCached } from '@/lib/post/queries';
 
 export const PostFeatured = async () => {
@@ -32,12 +29,10 @@ export const PostFeatured = async () => {
         priority={true}
       />
       <PostContent
-        dateTime={formatDateTime(post.createdAt)}
-        formattedDate={formatDateTime(post.createdAt)}
+        dateTime={post.createdAt}
         title={post.title}
         url={postLink}
         heading={'h1'}
-        dateTitle={formatRelativeDateTime(post.createdAt)}
         excerpt={post.excerpt}
       />
     </section>
