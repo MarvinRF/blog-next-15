@@ -1,5 +1,6 @@
 import { findPostBySlugCached } from '@/lib/post/queries';
 import Image from 'next/image';
+import { PostHeading } from '../PostHeading';
 
 type SinglePostProps = {
   slug: string;
@@ -22,9 +23,9 @@ const SinglePost = async ({ slug }: SinglePostProps) => {
       )}
 
       <header className='mb-6'>
-        <h1 className='text-3xl md:text-5xl font-bold mb-2 leading-tight'>
+        <PostHeading as='h1' url={`post/${post.slug}`}>
           {post.title}
-        </h1>
+        </PostHeading>
         <p className='text-sm text-gray-600'>
           Publicado por{' '}
           <span className='font-medium text-black dark:text-white'>
