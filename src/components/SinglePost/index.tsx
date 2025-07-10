@@ -1,6 +1,7 @@
 import { findPostBySlugCached } from '@/lib/post/queries';
 import Image from 'next/image';
 import { PostHeading } from '../PostHeading';
+import { PostDate } from '../PostDate';
 
 type SinglePostProps = {
   slug: string;
@@ -22,39 +23,26 @@ const SinglePost = async ({ slug }: SinglePostProps) => {
         </div>
       )}
 
-      <header className='mb-6'>
-        <PostHeading as='h1' url={`post/${post.slug}`}>
+      <header className='mb-7'>
+        <PostHeading className='!mb-1' as='h1' url={`post/${post.slug}`}>
           {post.title}
         </PostHeading>
-        <p className='text-sm text-gray-600'>
+        <p className='text-sm text-zinc-500'>
           Publicado por{' '}
           <span className='font-medium text-black dark:text-white'>
             {post.author}
           </span>{' '}
-          em{' '}
-          <time dateTime={post.createdAt}>
-            {new Date(post.createdAt).toLocaleDateString('pt-BR', {
-              day: '2-digit',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </time>
+          em <PostDate dateTime={post.createdAt} />
         </p>
       </header>
 
       <section className='prose prose-neutral max-w-none'>
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className='text-xl mb-4 text-zinc-400'>{post.excerpt}</div>
+        <div>{post.content}</div>
       </section>
 
-      <footer className='mt-12 text-sm text-gray-500 border-t pt-6'>
-        Última atualização em{' '}
-        <time dateTime={post.updatedAt}>
-          {new Date(post.updatedAt).toLocaleDateString('pt-BR', {
-            day: '2-digit',
-            month: 'long',
-            year: 'numeric',
-          })}
-        </time>
+      <footer className='mt-7 text-sm text-zinc-500 border-t pt-2'>
+        Última atualização em <PostDate dateTime={post.updatedAt} />
       </footer>
     </article>
   );
