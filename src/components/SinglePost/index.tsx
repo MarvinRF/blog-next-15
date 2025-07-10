@@ -2,6 +2,7 @@ import { findPostBySlugCached } from '@/lib/post/queries';
 import Image from 'next/image';
 import { PostHeading } from '../PostHeading';
 import { PostDate } from '../PostDate';
+import SafeMarkDown from '../SafeMarkDown';
 
 type SinglePostProps = {
   slug: string;
@@ -39,7 +40,7 @@ const SinglePost = async ({ slug }: SinglePostProps) => {
 
       <section className='prose prose-neutral max-w-none'>
         <div className='text-xl mb-4 text-zinc-400'>{post.excerpt}</div>
-        <div>{post.content}</div>
+        <SafeMarkDown markdown={post.content} />
       </section>
 
       <footer className='mt-7 text-sm text-zinc-500 border-t pt-2'>
