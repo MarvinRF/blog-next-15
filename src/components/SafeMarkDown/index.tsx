@@ -12,16 +12,17 @@ const SafeMarkDown = ({ markdown }: SafeMarkDownProps) => {
   return (
     <div
       className={clsx(
-        'prose prose-slate',
+        'prose prose-zinc dark:prose-invert',
         'w-full max-w-none',
         'overflow-hidden',
         'prose-a:transition',
         'prose-a:no-underline',
-        'prose-a:text-blue-500',
-        'prose-a:hover:text-blue-700',
+        'prose-a:text-emerald-400',
+        'prose-a:hover:text-emerald-600',
         'prose-a:hover:underline',
         'prose-img:mx-auto',
         'lg:prose-lg',
+        'dark:text-white',
       )}
     >
       <ReactMarkDown
