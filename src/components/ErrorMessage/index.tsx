@@ -23,7 +23,7 @@ const ErrorMessage = ({
         <div className='max-w-md'>
           <h1 className='text-7xl font-extrabold text-red-600 mb-4'>{code}</h1>
           <h2 className='text-2xl font-semibold mb-2'>{contentTitle}</h2>
-          <p className='text-base text-muted-foreground'>{content}</p>
+          <div className='text-base text-muted-foreground'>{content}</div>
         </div>
       </main>
     </>

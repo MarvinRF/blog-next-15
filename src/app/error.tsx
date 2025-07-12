@@ -1,14 +1,23 @@
 'use client';
 import ErrorMessage from '@/components/ErrorMessage';
+import { useEffect } from 'react';
 
-const RootErrorPage = () => {
+type RootErrorProps = {
+  error: Error;
+  reset: () => void;
+};
+
+const RootErrorPage = ({ error }: RootErrorProps) => {
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
   return (
     <>
       <ErrorMessage
-        content='Algum error inesperado ocorreu'
-        contentTitle='Página não pode ser carregada'
-        pageTitle='Página não pode ser carregada'
-        code='500😅'
+        content='Ocorreu um erro do qual nossa aplicação não conseguiu tratar. Tente novamente mais tarde'
+        contentTitle={'Internal Server Error'}
+        pageTitle='Internal Server Error'
+        code='501😅'
       />
     </>
   );
