@@ -1,5 +1,5 @@
+'use client'; // <- Se espalha para todos os componentes que eu importar aqui
 import React from 'react';
-
 type ErrorMessageProps = {
   pageTitle: string;
   contentTitle: string;
