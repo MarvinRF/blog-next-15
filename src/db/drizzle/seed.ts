@@ -5,14 +5,10 @@ import { postsTable } from './schemas';
 (async () => {
   const jsonPostRepository = new JsonPostRepository();
   const posts = await jsonPostRepository.findAll();
-  const postsToInsert = posts.map(post => ({
-    ...post,
-    coverImgUrl: post.coverImageUrl ?? '',
-  }));
 
   try {
     await drizzleDb.delete(postsTable); // ISSO LIMPA A BASE DE DADOS
-    await drizzleDb.insert(postsTable).values(postsToInsert);
+    await drizzleDb.insert(postsTable).values(posts);
 
     console.log();
     console.log(`${posts.length} posts foram salvos na base de dados.`);
