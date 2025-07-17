@@ -10,11 +10,38 @@ export class DrizzlePostRepository implements PostRepository {
     });
     return posts;
   }
-  async findBySlugPublic(slug: string): Promise<PostModel> {}
+  async findBySlugPublic(slug: string): Promise<PostModel> {
+    console.log('\n', 'D findBySlugPublic', '\n');
 
-  async findById(id: string): Promise<PostModel> {}
+    const post = await drizzleDb.query.posts.findFirst({
+      where: (posts, { eq, and }) =>
+        and(eq(posts.published, true), eq(posts.slug, slug)),
+    });
 
-  async findAll(): Promise<PostModel[]> {}
+    if (!post) throw new Error('Post não encontrado para slug');
+
+    return post;
+  }
+
+  async findAll(): Promise<PostModel[]> {
+    console.log('\n', 'D findAll', '\n');
+    const posts = await drizzleDb.query.posts.findMany({
+      orderBy: (posts, { desc }) => desc(posts.createdAt),
+    });
+
+    return posts;
+  }
+
+  async findById(id: string): Promise<PostModel> {
+    console.log('\n', 'D findById', '\n');
+    const post = await drizzleDb.query.posts.findFirst({
+      where: (posts, { eq }) => eq(posts.id, id),
+    });
+
+    if (!post) throw new Error('Post não encontrado para ID');
+
+    return post;
+  }
 }
 (async () => {
   const repo = new DrizzlePostRepository();
