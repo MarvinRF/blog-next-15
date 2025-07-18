@@ -20,7 +20,6 @@ export const PostContent = ({
   heading,
   className,
 }: PostContentProps) => {
-  console.log(dateTime);
   return (
     <div className={clsx('flex flex-col sm:justify-center', className)}>
       <div>
